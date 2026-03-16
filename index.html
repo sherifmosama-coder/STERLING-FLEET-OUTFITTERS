@@ -21,5 +21,13 @@
 </head>
 <body>
     <iframe src="https://script.google.com/macros/s/AKfycbwSh484iXusWyc_RWADV3JyNPp6Hck8Qz9uDWBpvflf8VzECDDBqiKMNj8x-Ic5m61B/exec"></iframe>
+<script>
+        // Listen for messages from the Google Apps Script iframe
+        window.addEventListener('message', function(event) {
+            if (event.data && event.data.action === 'changeTitle') {
+                document.title = event.data.newTitle;
+            }
+        });
+</script>
 </body>
 </html>
